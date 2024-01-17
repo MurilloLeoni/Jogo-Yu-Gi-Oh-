@@ -37,6 +37,7 @@
 .container__letf{
     width: 35%;
     min-width: 300px;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -92,13 +93,13 @@
     margin-top: 5rem;
 }
 
-.versus-top,.versusbottom{
+.versus-top,.versus-bottom{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.versusbottom{
+.versus-bottom{
     margin-top: 1rem;
 }
 
@@ -119,4 +120,12 @@
     height: 11.2rem;
     width: 8rem;
     border-radius: 8px;
+}
+
+.card{
+    transition: transform 0.2s;
+}
+
+.card:hover{
+transform: scale(1.2);
 }
