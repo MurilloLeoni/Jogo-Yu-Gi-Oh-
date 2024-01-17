@@ -102,6 +102,11 @@ async function setCardsField (cardId){
     state.fieldCards.player.style.display = "block";
     state.fieldCards.computer.style.display = "block";
 
+    
+    state.cardSprites.avatar.src = "";
+    state.cardSprites.name.innerText = "";
+    state.cardSprites.type.innerText = "";
+
     state.fieldCards.player.src = cardData[cardId].img;
     state.fieldCards.computer.src = cardData[computerCardId].img;
 
@@ -181,13 +186,21 @@ async function playAudio(status){
     const audio = new Audio(`./src/assets/audios/${status}.wav`);
     
     try{
+    audio.volume = 0.1;
     audio.play();
     } catch {}
 }
 //Função para inicar
 function init(){
+    state.fieldCards.player.style.display = "none";
+    state.fieldCards.computer.style.display = "none";
+
     drawCards(5, playerSides.player1);
     drawCards(5, playerSides.computer);
+
+    const bgm = document.getElementById("bgm");
+    bgm.volume = 0.2;
+    bgm.play();
 }
 
 init();
